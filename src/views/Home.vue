@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <Header></Header>
-    <HomeSwiper></HomeSwiper>
-    <HomeIcons></HomeIcons>
-    <HomeRecommend></HomeRecommend>
-    <HomeWeekend></HomeWeekend>
+    <Header :city="city"></Header>
+    <HomeSwiper :list="swiperList"></HomeSwiper>
+    <HomeIcons :list="iconList"></HomeIcons>
+    <HomeRecommend :list="recommendList"></HomeRecommend>
+    <HomeWeekend :list="weekendList"></HomeWeekend>
   </div>
 </template>
 
@@ -24,6 +24,35 @@ export default {
     HomeIcons,
     HomeRecommend,
     HomeWeekend
+  },
+  data() {
+    return {
+      city: '',
+      swiperList: [],
+      weekendList: [],
+      recommendList: [],
+      iconList: []
+    }
+  },
+  methods: {
+    getHomeInfo() {
+      this.axios.get('https://easy-mock.com/mock/5cef72f77b61f7101ff66f28/mock/index')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc(res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.city = data.city
+        this.swiperList = data.swiperList
+        this.recommendList = data.recommendList
+        this.iconList = data.iconList
+        this.weekendList = data.weekendList
+      }
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>

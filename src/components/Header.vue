@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-left"><div class="iconfont back-icon">&#xe600;</div></div>
     <div class="header-input"><span class="iconfont">&#xe631;</span>Input Cities / Attractions / Themes</div>
-    <div class="header-right">Cities
+    <div class="header-right"> {{ this.city }}
       <span class="iconfont arrow-down">&#xe776;</span>
     </div>
   </div>
@@ -13,6 +13,9 @@
 
 
 export default {
+  props: {
+    city: String
+  }
 }
 </script>
 
