@@ -2,9 +2,11 @@
   <div class="header">
     <div class="header-left"><div class="iconfont back-icon">&#xe600;</div></div>
     <div class="header-input"><span class="iconfont">&#xe631;</span>Input Cities / Attractions / Themes</div>
-    <div class="header-right"> {{ this.city }}
-      <span class="iconfont arrow-down">&#xe776;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right"> {{ this.city }}
+        <span class="iconfont arrow-down">&#xe776;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -36,6 +38,7 @@ export default {
     width: 1.24rem
     float: right
     text-align: center
+    color: #fff
     .arrow-down
       font-size: .24rem
       margin-left: -.04rem
