@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
     "core-js": "^2.6.5",
     "fastclick": "^1.0.6",
     "mockjs": "^1.0.1-beta3",
@@ -21,7 +22,7 @@
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
