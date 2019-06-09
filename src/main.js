@@ -7,6 +7,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
+import store from './store'
 require('swiper/dist/css/swiper.css')
 
 
@@ -16,5 +17,6 @@ Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
