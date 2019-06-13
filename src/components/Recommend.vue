@@ -2,14 +2,14 @@
     <div class="home-recommend">
         <div class="title">Recommendation</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key='item.id'>
-                    <img :src="item.imgUrl" class="item-img">
+            <router-link tag="li" class="item border-bottom" v-for="item of recommendList" :key='item.id' :to="'/detail/' + item.id">
+                <img :src="item.imgUrl" class="item-img">
                 <div class="item-info">
                     <p class="item-title">{{ item.title }}</p>
                     <p class="item-desc"> {{ item.desc }}</p>
                     <button class="item-button">Click</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
