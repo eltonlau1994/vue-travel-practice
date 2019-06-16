@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1801/4e/4ee5653be58dcb1a3.water.jpg_600x330_f82a1d80.jpg">
+            <img class="banner-img" :src="bannerImg">
             <div class="banner-info">
-                <div class="banner-title">Hong Kong Disneyland</div>
+                <div class="banner-title"> {{this.sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe610;</span>
-                    15
+                    {{this.galleryImgs.length}}
                 </div>
             </div>
         </div>
         <Fade>
             <CommonGallery 
-            :images="imgs" 
+            :images="galleryImgs" 
             v-show="showGallery"
             @close="handleBannerClose"></CommonGallery>
         </Fade>
@@ -24,13 +24,14 @@ import CommonGallery from '@/common/gallery/Gallery'
 import Fade from '@/common/fade/Fade'
 
 export default {
+    props: {
+        sightName: String,
+        bannerImg: String,
+        galleryImgs: Array
+    },
     data() {
         return {
             showGallery: false,
-            imgs: [
-                'http://img1.qunarzz.com/sight/p0/1801/4e/4ee5653be58dcb1a3.water.jpg_r_800x800_279b846f.jpg',
-                'http://img1.qunarzz.com/sight/p0/1803/56/56f59615373d8dbba3.water.jpg_r_800x800_31653ab3.jpg'
-            ]
         }
     },
     methods: {
