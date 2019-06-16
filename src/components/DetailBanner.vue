@@ -10,16 +10,18 @@
                 </div>
             </div>
         </div>
-        <CommonGallery 
+        <Fade>
+            <CommonGallery 
             :images="imgs" 
             v-show="showGallery"
             @close="handleBannerClose"></CommonGallery>
+        </Fade>
     </div>
-
 </template>
 
 <script>
 import CommonGallery from '@/common/gallery/Gallery'
+import Fade from '@/common/fade/Fade'
 
 export default {
     data() {
@@ -40,7 +42,8 @@ export default {
         }
     },
     components: {
-        CommonGallery
+        CommonGallery,
+        Fade
     }
 }
 
